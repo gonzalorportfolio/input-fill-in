@@ -30,29 +30,22 @@ export const render = (e) => {
 
 export const renderCard = (e) => {
    const city = cities.filter((each) => each.rank === e.target.id);
-   console.log(city[0])
+   console.log(city[0]);
    const modalBg = document.createElement('div');
             modalBg.className = 'modal-bg';
             modalBg.style.display = 'flex';
             modalBg.innerHTML =  ` 
-        <div class="modal-bg" style="display: flex;">
-            <div class="pokemonCard" style="display: block; color: blue; background-color: rgb(240, 248, 255); padding: 1em; margin: 1em; max-width: 50vw; border-radius: 1em;">
-                Bulbasaur is a pokemon that can be found in the following version(s) of the Pokemon games:
-                <div id="bulbasaurGameInfo" class="gameInfo">
-                    <p class="gameText">Red</p>
-                        <p class="gameText">Blue</p>
-                        <p class="gameText">Yellow</p>
-                        <p class="gameText">Gold</p>
-                        <p class="gameText">Silver</p>
-                        <p class="gameText">Crystal</p>
-                        <p class="gameText">Ruby</p>
-                        <p class="gameText">Sapphire</p>
-                    </div>
-                <input type="submit" value="Close" >
-                
-                <h3>Bulbasaur #0001</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="picture of bulbasaur" style="width: 75%; max-width: 300px;">
+            <div class="cityCard" style="display: block; color: blue; background-color: rgb(240, 248, 255); padding: 1em; margin: 1em; max-width: 50vw; border-radius: 1em;">
+                ${city[0].city} is a city that can be found in the state of ${city[0].state}:
+                <div id="${city[0].city}" class="gameInfo">
+                    <p class="cityText">Ranked:# ${city[0].rank}</p>
+                    <p class="cityText">Growth: ${city[0].growth_from_2000_to_2013} </p>
+                    <p class="cityText">Population ${city[0].population}</p>
                 </div>
-            </div>`
+                <input class='close' type="submit" value="Close" >
+                
+                <h3>${city[0].city}, ${city[0].state}</h3><img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png" alt="picture of bulbasaur" style="width: 75%; max-width: 300px;">
+                </div>`
    getElement('#app').appendChild(modalBg);
   
 
