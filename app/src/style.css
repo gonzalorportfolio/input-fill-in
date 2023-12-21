@@ -95,3 +95,8 @@ span.population {
 .cityCard {
   max-height: 800px;
 }
+ul {
+  max-height: 400px;
+  overflow-y: auto;
+  
+}
