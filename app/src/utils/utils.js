@@ -7,8 +7,7 @@ export const fetchData = async (url) => {
         if (!response.ok) {
         throw new Error('Network response was not ok');
         }
-        const data = await response.json();
-        return data;
+        return response.json();
     } catch (error) {
         console.error('Error fetching data:', error);
     }
